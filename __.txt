@@ -1,0 +1,110 @@
+import React from 'react';
+import { useQuery } from '@apollo/client';
+import  { Avatar} from "@material-ui/core";
+import { Waypoint } from "react-waypoint";
+
+
+import { GET_GROUP_MESSAGES } from '../../Graphql/message';
+import {currentDate} from "../../Utils/date";
+import { useAuthState } from '../../context/auth';
+import Arsenal from "../../Assets/Arsenal.png";
+import "./home.css";
+
+
+
+/** Home component */
+const  Home = () => {
+   const  { user } = useAuthState();
+   const { data, loading , fetchMore, networkStatus } = useQuery(GET_GROUP_MESSAGES,{
+      notifyOnNetworkStatusChange: false,
+      variables:{
+         receiver: "EPL",
+         limit: 10
+
+      }
+   })
+
+
+let  placeHolder;
+if(loading){
+   return placeHolder = (
+      <div className="loadingState">
+           <h1>Loading ...</h1>
+      </div>
+
+   )
+}
+
+
+if(!data){
+   return placeHolder = (
+      <div className="loadingState">
+           <h1>No arguments</h1>
+      </div>
+   )
+}
+
+console.log(networkStatus)
+
+const {messages, hasmore} = data?.getGroupMessages;
+let markUp  = messages.map(
+          (message, i) => (
+                  < div key={message.id}>
+                  <div >
+                     <div  className={message.sender.username === user?.username ? "authmsg" : `msg`}>
+                           <div className="messageSender">
+                                    <Avatar src={Arsenal}  sizes="1em"/>
+                                    <p>{message.sender.username}</p>
+                           </div>
+                           <div className={message.sender.username === user?.username ? "authmsgbody" : `msgbody`}>
+                                    {message.body}
+                                    <div className="messageMeta">{currentDate(message.createdAt)}</div>
+                               </div>
+
+                     </div>
+                  </div>
+                   { (hasmore === true) &&  (i === messages.length - 10) &&
+                   <Waypoint onEnter={
+                               () => fetchMore({
+                                  variables: {
+                                    receiver: "EPL",
+                                    end: data.getGroupMessages.cursor,
+                                    limit: 10
+                                  },
+                                  updateQuery: (pv, { fetchMoreResult}) => {
+                                          if(!fetchMoreResult){
+                                             return pv
+                                          }
+
+
+                                        const {messages } = pv?.getGroupMessages;
+                                        const {messages:msg, hasmore, cursor } = fetchMoreResult?.getGroupMessages;
+                                        console.log()
+                                          return {
+                                             getGroupMessages: {
+                                             __typename: "messageConnection",
+                                              messages: [ ...messages, ...msg ],
+                                              hasmore,
+                                              cursor
+                                          }
+                                          }
+                                  }
+                               })
+
+                          }/>
+                          }
+                  </div>
+
+          )
+)
+
+ return (
+    <div className="homeWrapper">
+       {placeHolder}
+       {markUp}
+    </div>
+ )
+
+}
+
+export default Home;
