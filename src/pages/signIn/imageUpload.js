@@ -26,7 +26,7 @@ const ImageUpload = ({ handleChange }) => {
     const classes = useStyles();
 
   return(
- <>
+ <div>
 
   <input
       accept="image/x-png,image/jpeg"
@@ -57,7 +57,7 @@ const ImageUpload = ({ handleChange }) => {
           <AddAPhoto style={{fontSize:"xx-large"}} />
     </IconButton>
   </label>
-  </>
+  </div>
   )
 
 };

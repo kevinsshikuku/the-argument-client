@@ -13,7 +13,7 @@ function FabComponent() {
  const location = useLocation()
 
  return (
-   <>
+   <div>
      {  !(location.pathname === "/createmessage" ) &&
       <div className="fab">
             <Link to={ user ? "/createmessage" : "/login"}>
@@ -23,7 +23,7 @@ function FabComponent() {
           </Link>
       </div>
     }
-   </>
+   </div>
  )
 }
 

@@ -19,17 +19,17 @@ const  Home = () => {
 
 let markUp  = messages &&  messages.map(
           (message) => (
-                  <div  key={message?.id}>
-                     <div  className={message?.sender?.username === user?.username ? "authmsg" : `msg`}>
+                  <div  key={message.id}>
+                     <div  className={message.sender.username === user.username ? "authmsg" : `msg`}>
                            <div className="messageSender">
-                                    <Avatar src={message?.sender?.image || Teams.EPL}  sizes="1em"/>
-                                    <p>{message?.sender?.username || message?.sender}</p>
+                                    <Avatar src={message.sender.image || Teams.EPL}  sizes="1em"/>
+                                    <p>{message.sender.username || message.sender}</p>
                            </div>
                            <div className={
-                              (message?.sender?.username || message?.sender ) === user?.username
+                              (message.sender.username || message.sender ) === user.username
                                           ? "authmsgbody" : `msgbody`}>
-                                    {message?.body}
-                                    <div className="messageMeta">{currentDate(message?.createdAt)}</div>
+                                    {message.body}
+                                    <div className="messageMeta">{currentDate(message.createdAt)}</div>
                                </div>
                      </div>
                   </div>

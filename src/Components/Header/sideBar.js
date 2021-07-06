@@ -22,7 +22,7 @@ const logOut = () => {
 }
 
     return (
-<>
+<div>
      <div className="menuIcon">
            {open ?
            <Close onClick={handleClick}  fontSize="large" /> :
@@ -39,7 +39,7 @@ const logOut = () => {
         <Link  to="/about" style={{textDecoration:"none"}} > <p>MORE</p> </Link>
      </div>
      }
-</>
+</div>
     )
 }
 

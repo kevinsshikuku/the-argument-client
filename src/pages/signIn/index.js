@@ -156,7 +156,7 @@ const main = (
 
 
             {
-            <>
+            <div>
            <p>Group</p>
            <label> Yes
                <input type="radio"
@@ -243,7 +243,7 @@ const main = (
             />
 
             <button type="submit" className={classes.signInButton}>  Create</button>
-            </>
+            </div>
             }
 
         </form>
@@ -256,10 +256,10 @@ const main = (
 
 
  return (
-  <>
+  <div>
     {loading ? loader : main}
     {!loading && data && message}
-  </>
+  </div>
  );
 }
 export default SignIn;
