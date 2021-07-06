@@ -151,7 +151,7 @@ const main = (
           <p>EPL</p>
         </div>
 
-        <img src={values.image} /> <img src={values.coverImage} />
+        <img src={values.image}  alt="icon"/> <img src={values.coverImage}  alt="coverImage"/>
         <form onSubmit={handleSubmit}  className={classes.signInForm} >
 
 
