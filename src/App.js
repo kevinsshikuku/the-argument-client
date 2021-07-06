@@ -10,7 +10,7 @@ import FabComponent from "./Components/Fab";
 import AddMessage  from "./pages/AddMessage/index";
 import About from "./pages/About/About";
 
-function App() {
+function App() { 
   return (
     <div className="App">
           <Header/>
