@@ -1,0 +1,15 @@
+.App{
+ max-width: 48rem;
+ margin: auto;
+
+}
+
+.fab{
+ position: fixed;
+bottom: 0;
+right: 0;
+margin-bottom: 2rem;
+margin-right: .7rem;
+ z-index: 13;
+
+}
