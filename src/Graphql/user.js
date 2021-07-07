@@ -89,22 +89,22 @@ export const GET_AUTH_USER = gql`
 /** Creates a user acccesible to admins only */
 export const SIGN_UP = gql`
   mutation(
-        $username: String,
-        $group: Boolean,
+        $username: String!,
+        $group: Boolean!,
         $description: String,
         $owner: String,
         $manager: String,
         $founder: String,
         $founded: String,
         $stadium: String,
-        $image: Sring,
+        $image: String,
         $coverImage: String
     ){
      signup(
            username:$username,
            group:$group
            description: $description
-           own: $owner
+           owner: $owner
            manager: $manager
            founder: $founder
            founded: $founded
