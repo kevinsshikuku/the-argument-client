@@ -35,11 +35,11 @@ const handleErrors = () => {
  return onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors)
    console.log(graphQLErrors)
-    graphQLErrors.map(({ message}) =>
-      console.log(
-        `Graphql Error : ${message}`
-      )
-    );
+    // graphQLErrors.map(({ message}) =>
+    //   console.log(
+    //     `Graphql Error : ${message}`
+    //   )
+    // );
   if (networkError) console.log(`[Network error]: ${networkError}`);
 });
 }
