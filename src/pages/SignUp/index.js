@@ -92,14 +92,18 @@ function SignUp() {
 
   const [message, setMessage] = useState("");
 
-/** handles post image upload ! */
+/** function given to imageUploadjs as a prop to handles post image upload ! */
  const handlePostImageUpload = (e ) => {
+        let reader = new FileReader();
         const file = e.target.files[0];
         const name = e.target.name
-        if (!file) return;
-               setValues({ ...values, [name]: URL.createObjectURL(file) });
-  };
 
+        reader.onloadend = () => {
+          setValues({...values, [name]: reader.result})
+        }
+      reader.readAsDataURL(file)
+  };
+ console.log(values.coverImage)
 
 
 
