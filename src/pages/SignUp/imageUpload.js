@@ -31,7 +31,7 @@ const ImageUpload = ({ handleChange }) => {
   <input
       accept="image/x-png,image/jpeg"
       name="image"
-      placeholder="Image"
+      placeholder="coverImage"
       className={classes.input}
       onChange={handleChange}
       id="icon-button-file"
@@ -43,20 +43,6 @@ const ImageUpload = ({ handleChange }) => {
     </IconButton>
   </label>
      <br/>
-    <input
-      accept="image/x-png,image/jpeg"
-      name="coverImage"
-      placeholder="Image"
-      className={classes.input}
-      onChange={handleChange}
-      id="icon-btn-file"
-      type="file"
-         />
-  <label htmlFor="icon-btn-file">
-    <IconButton color="secondary" aria-label="upload picture" size="medium" component="span" >
-          <AddAPhoto style={{fontSize:"xx-large"}} />
-    </IconButton>
-  </label>
   </div>
   )
 

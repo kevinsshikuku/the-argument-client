@@ -28,17 +28,18 @@ const CoverImageUpload = ({ handleChange }) => {
 
   return(
  <>
-  <input
+    <input
       accept="image/x-png,image/jpeg"
-      name="image"
+      name="coverImage"
+      placeholder="Image"
       className={classes.input}
       onChange={handleChange}
-      id="icon-button-file"
+      id="_icon-btn-file"
       type="file"
          />
-  <label htmlFor="icon-button-file">
-    <IconButton color="inherit" aria-label="upload picture" size="medium" component="span">
-      <AddAPhoto style={{fontSize:"xx-large"}} />
+  <label htmlFor="_icon-btn-file">
+    <IconButton color="secondary" aria-label="upload picture" size="medium" component="span" >
+          <AddAPhoto style={{fontSize:"xx-large"}} />
     </IconButton>
   </label>
   </>

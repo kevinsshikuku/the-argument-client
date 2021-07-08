@@ -5,6 +5,7 @@ import {CircularProgress, Avatar, TextareaAutosize} from  "@material-ui/core";
 import { SIGN_UP } from '../../Graphql/user';
 import Logo from "../../Assets/EPL.png";
 import  ImageUpload from "./imageUpload";
+import CoverImageUpload from "./coverImageUpload";
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -103,7 +104,6 @@ function SignUp() {
         }
       reader.readAsDataURL(file)
   };
- console.log(values.coverImage)
 
 
 
@@ -182,6 +182,7 @@ const main = (
                </label>
 
             <ImageUpload handleChange={handlePostImageUpload}/>
+            <CoverImageUpload handleChange={handlePostImageUpload}/>
             <input
             placeholder="Username"
             name= "username"
