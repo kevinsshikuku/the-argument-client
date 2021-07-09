@@ -29,7 +29,7 @@ function Header() {
                                  <Avatar alt="Remy Sharp" src={EPL} className={classes.large} />
                                  <div className="chat_details">
                                     <p> The EPL argument</p>
-                                    <i> Surport your EPL team </i>
+                                    <div>I  am <el style={{color:"white"}}>{user.username} </el> surporter </div>
                                  </div>
                         </div>
                         <div className="sideBar">

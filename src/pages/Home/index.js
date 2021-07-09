@@ -31,7 +31,7 @@ let markUp  = messages &&  messages?.map(
                      <div  className={message?.sender?.username === user?.username ? "authmsg" : `msg`}>
                            <div className="messageSender">
                                     <Avatar src={message?.sender?.image || Teams.EPL}   className={classes.large} />
-                                    <p>{message?.sender?.username || message?.sender}</p>
+                                    <p>{`${message?.sender?.username || message?.sender} fan`}</p> 
                            </div>
                            <div className={
                               (message?.sender?.username || message?.sender ) === user?.username
