@@ -5,7 +5,6 @@ import {CircularProgress, Avatar, TextareaAutosize} from  "@material-ui/core";
 import { SIGN_UP } from '../../Graphql/user';
 import Logo from "../../Assets/EPL.png";
 import  ImageUpload from "./imageUpload";
-import CoverImageUpload from "./coverImageUpload";
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -85,7 +84,6 @@ function SignUp() {
        founder: "",
        founded: "",
        image:"",
-       coverImage: "",
        group: false,
        stadium: "",
        }
@@ -156,7 +154,8 @@ const main = (
           <p>EPL</p>
         </div>
 
-        <img src={values.image}  alt="icon"/> <img src={values.coverImage}  alt="coverImage"/>
+        <img src={values.image}  alt="icon"/>
+        <br/>
         <form onSubmit={handleSubmit}  className={classes.signInForm} >
 
 
@@ -182,7 +181,6 @@ const main = (
                </label>
 
             <ImageUpload handleChange={handlePostImageUpload}/>
-            <CoverImageUpload handleChange={handlePostImageUpload}/>
             <input
             placeholder="Username"
             name= "username"

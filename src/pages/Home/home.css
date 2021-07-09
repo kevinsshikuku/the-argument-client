@@ -12,13 +12,14 @@
 .messageSender{
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
 }
 
 .messageSender p{
  font-size: medium;
  font-weight: bolder;
- margin-bottom: .5rem;
+ /* margin-top: auto; */
+ margin: 0 0 0 .3rem;
 }
 
 .msgbody, .authmsgbody{

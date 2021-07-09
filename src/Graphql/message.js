@@ -32,6 +32,7 @@
                 sender{
                   id
                   username
+                  image
                 }
                 createdAt
          }
