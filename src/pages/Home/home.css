@@ -28,7 +28,7 @@
   padding: .5rem 1rem;
   border-radius: .5rem;
   background-color: rgba(196, 196, 196, 0.179);
- word-break: break-all;
+ word-wrap: break-word;
 }
 .authmsgbody{
    background-color: rgba(128, 0, 128, 0.172);
