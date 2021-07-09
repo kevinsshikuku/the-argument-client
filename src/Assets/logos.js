@@ -20,9 +20,10 @@ import  Westbrom  from "./Westbrom.png"
 import  Westham  from "./Westham.png"
 import  Brighton from "./brighton.png";
 import  EPL from "./EPL.png";
+import  Voke from "./voke.jpg";
 
 
 
 export const Teams =
  {Arsenal, Astonvilla, Brighton, Burnley, Chelsea, CrystalPalace, Everton, Fullham, Liverpool, Leeds, Leicester, ManCity, ManU, Newcastle, Norwhich,Southampto,
-  Sheffield,  Tote, Westbrom, Wolverhampton, Westham, EPL}
+  Sheffield,  Tote, Westbrom, Wolverhampton, Westham, EPL, Voke}
