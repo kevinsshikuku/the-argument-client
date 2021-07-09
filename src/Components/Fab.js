@@ -1,6 +1,6 @@
 import React from 'react';
 import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
+import ChatIcon from '@material-ui/icons/Chat';
 import { useAuthState } from '../context/auth';
 import{ Link , useLocation} from "react-router-dom"
 
@@ -18,7 +18,7 @@ function FabComponent() {
       <div className="fab">
             <Link to={ user ? "/createmessage" : "/login"}>
                   <Fab color="primary" aria-label="add">
-                      <AddIcon />
+                      <ChatIcon />
                 </Fab>
           </Link>
       </div>

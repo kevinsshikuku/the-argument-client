@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import {Menu,   Close} from '@material-ui/icons';
+import { MoreVert ,Close} from '@material-ui/icons';
 import { Link, useHistory, useLocation } from "react-router-dom"
 import { useAuthDispatch, useAuthState } from '../../context/auth';
 
@@ -26,7 +26,7 @@ const logOut = () => {
      <div className="menuIcon">
            {open ?
            <Close onClick={handleClick}  fontSize="large" /> :
-           <Menu onClick={handleClick}  fontSize="large" />}
+           <MoreVert onClick={handleClick}  fontSize="large" />}
      </div>
      {open &&
      <div className="menu" onClick={handleClick} >
