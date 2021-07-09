@@ -36,7 +36,7 @@ let markUp  = messages &&  messages?.map(
                            <div className={
                               (message?.sender?.username || message?.sender ) === user?.username
                                           ? "authmsgbody" : `msgbody`}>
-                                    {message?.body}
+                                    <p>{message?.body}</p>
                                     <div className="messageMeta">{currentDate(message?.createdAt)}</div>
                                </div>
                      </div>
