@@ -3,7 +3,7 @@ import  { Avatar} from "@material-ui/core";
 import {Teams} from "../../Assets/logos";
 import { makeStyles } from '@material-ui/core/styles';
 
-import {currentDate} from "../../Utils/date";
+import {currentDate,  timeAgo} from "../../Utils/date";
 import { useAuthState } from '../../context/auth';
 import { useMessageState } from '../../context/message';
 import "./home.css";
@@ -31,13 +31,15 @@ let markUp  = messages &&  messages?.map(
                      <div  className={message?.sender?.username === user?.username ? "authmsg" : `msg`}>
                            <div className="messageSender">
                                     <Avatar src={message?.sender?.image || Teams.EPL}   className={classes.large} />
-                                    <p>{`${message?.sender?.username || message?.sender} fan`}</p> 
+                                    <p>{`${message?.sender?.username || message?.sender} fan`}</p>
                            </div>
                            <div className={
                               (message?.sender?.username || message?.sender ) === user?.username
                                           ? "authmsgbody" : `msgbody`}>
                                     <p>{message?.body}</p>
-                                    <div className="messageMeta">{currentDate(message?.createdAt)}</div>
+                                    <div className="messageMeta">
+                                            {currentDate(message?.createdAt)} { timeAgo(message?.createdAt)}
+                                     </div>
                                </div>
                      </div>
                   </div>

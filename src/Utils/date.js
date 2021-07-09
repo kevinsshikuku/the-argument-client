@@ -38,7 +38,7 @@ export const timeAgo = unixTimestamp => {
   if (interval === 1) {
     return  `${interval}hr`;
   }else if(interval > 1){
-    return  `${interval}hr`;
+    return  `${interval}hrs`;
   }
 
 
@@ -80,7 +80,6 @@ export const currentDate = unixTimestamp => {
   ];
   const month = months[date.getMonth()];
   // const day = date.getDate();
-
 
 //days of week
 // let dd = ["Sun", "Mon", "Tue", 'Wed', "Thur", "Fri", "Sat"]
