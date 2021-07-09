@@ -29,6 +29,13 @@
   border-radius: .5rem;
   background-color: rgba(196, 196, 196, 0.179);
   word-wrap: break-word;
+  overflow: scroll;
+}
+
+.msgbody, .authmsgbody p{
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: scroll;
 }
 
 .authmsgbody{
