@@ -79,21 +79,21 @@ export const currentDate = unixTimestamp => {
     'Dec',
   ];
   const month = months[date.getMonth()];
-  const day = date.getDate();
+  // const day = date.getDate();
 
 
 //days of week
-let dd = ["Sun", "Mon", "Tue", 'Wed', "Thur", "Fri", "Sat"]
+// let dd = ["Sun", "Mon", "Tue", 'Wed', "Thur", "Fri", "Sat"]
 
-  const _day =  dd[day]
+  // const _day =  dd[day]
   const year = date.getFullYear().toString();
-  const time = date.toLocaleString('en-US', {
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: false,
-  });
+  // const time = date.toLocaleString('en-US', {
+  //   hour: 'numeric',
+  //   minute: 'numeric',
+  //   hour12: false,
+  // });
 
-  return `${time} ${_day} ${month}  ${year.slice(-2)} `;
+  return ` ${month}  ${year.slice(-2)} `;
 };
 
 
