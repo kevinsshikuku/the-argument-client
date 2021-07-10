@@ -21,7 +21,6 @@
   const authUserPayload = `
     username
     group
-    uuid
     token
   `
 
@@ -120,11 +119,10 @@ export const SIGN_UP = gql`
 
 /** A user can login */
 export const SIGN_IN = gql`
-  mutation($username: String!, $uuid: String) {
-     signin(username:$username, uuid:$uuid){
+  mutation($username: String!) {
+     signin(username:$username){
        username,
        group,
-       uuid,
        token
      }
   }

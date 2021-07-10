@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useMutation } from '@apollo/client';
 import jwtDecode  from 'jwt-decode';
 import {useHistory} from "react-router-dom";
-import { v4 as uuidv4 } from 'uuid';
 import "./login.css";
 
 
@@ -31,8 +30,6 @@ const Login = ()=> {
      const history = useHistory();
      const classes = useStyles();
 
-    let vvv = uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
-    console.log(vvv)
 
          /** Select team function */
           const select = (e) => {
