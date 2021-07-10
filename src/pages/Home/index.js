@@ -30,7 +30,7 @@ let markUp  = messages &&  messages?.map(
                   <div  key={message.id}>
                      <div  className={message?.sender?.username === user?.username ? "authmsg" : `msg`}>
                            <div className="messageSender">
-                                    <Avatar src={message?.sender?.image || Teams.EPL}   className={classes.large} />
+                                    <Avatar src={message?.sender?.image || Teams.PL}   className={classes.large} />
                                     <p>{`${message?.sender?.username || message?.sender} fan`}</p>
                            </div>
                            <div className={

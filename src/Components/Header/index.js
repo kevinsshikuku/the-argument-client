@@ -5,7 +5,6 @@ import { useAuthState } from '../../context/auth';
 import  "./header.css";
 
 import EPL from "../../Assets/EPL.png";
-import PL from "../../Assets/PL.png"
 import SideBar from "./sideBar";
 
 const useStyles = makeStyles((theme) => ({
@@ -29,7 +28,7 @@ function Header() {
                                  <Avatar alt="Remy Sharp" src={EPL} className={classes.large} />
                                  <div className="chat_details">
                                     <p> The EPL argument</p>
-                                    <div>I  am <b style={{color:"white"}}>{user.username} </b> surporter  </div>
+                                    <div><b style={{color:"white"}}>{user.username} </b> surporter  </div>
                                  </div>
                         </div>
                         <div className="sideBar">
@@ -39,8 +38,8 @@ function Header() {
 
       <div className="headerWrapper">
             <div className="h_header">
-                <Avatar alt="Remy Sharp" src={PL} className={classes.large} />
-                <p>EPL Chat</p>
+                <Avatar alt="Remy Sharp" src={EPL} className={classes.large} />
+                <p>The argument</p>
             </div>
 
             <div className="sideBar">
