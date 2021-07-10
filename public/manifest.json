@@ -2,23 +2,23 @@
   "short_name": "The argument",
   "name": "The argument",
   "icons": [
-    {
+     {
       "src": "EPL96.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "EPL44.png",
+      "src": "EPL144.png",
       "type": "image/png",
       "sizes": "144x144"
     },
     {
-      "src": "EPL.png",
+      "src": "EPL192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "EPL.png",
+      "src": "EPL512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
