@@ -1,6 +1,9 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
+import ReactGA from 'react-ga';
 import './App.css';
+
+
 
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login";
@@ -9,6 +12,9 @@ import Header from "./Components/Header";
 import FabComponent from "./Components/Fab";
 import AddMessage  from "./pages/AddMessage/index";
 import About from "./pages/About/About";
+
+ReactGA.initialize('UA-192087437-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
   return (

@@ -3,9 +3,24 @@
   "name": "The argument",
   "icons": [
     {
-      "src": "./logo.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "EPL96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "EPL44.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "EPL.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "EPL.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
