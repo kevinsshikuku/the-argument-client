@@ -3,7 +3,10 @@
  const messagePayload = `
     id
    body
-   sender
+   sender{
+      id
+      username
+   }
    receiver
    createdAt
  `
@@ -34,6 +37,11 @@
                   username
                   image
                 }
+                likes{
+                   id
+                   message
+                   createdAt
+                }
                 createdAt
          }
       }
@@ -42,26 +50,28 @@
 
 
 /**Create message */
-export const CREATE_MESSAGE = gql`
-  mutation($body: String!, $receiver: String){
-     sendMessage(body: $body, receiver:$receiver){
-      _id
-      body
-      sender
-      createdAt
-     }
-  }
-`
+
 
 /** Publishes new message in real time */
 export const NEW_MESSAGE = gql`
   subscription {
      message{
-        _id,
+        id,
         body,
-        sender,
-        receiver,
+        sender
         createdAt
      }
   }
+`
+
+
+export const CREATE_MESSAGE = gql`
+  mutation($body: String!, $receiver: String){
+     sendMessage(body: $body, receiver:$receiver){
+      id
+      body
+      sender
+      createdAt
+  }
+}
 `

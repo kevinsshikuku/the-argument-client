@@ -27,7 +27,7 @@
   border: .1px solid rgba(90, 90, 90, 0.097);
   padding: .5rem 1rem;
   border-radius: .5rem;
-  background-color: rgba(196, 196, 196, 0.179);
+  background-color: rgba(206, 178, 178, 0.179);
   word-wrap: break-word;
 }
 
@@ -39,7 +39,20 @@
 .messageMeta{
 margin: 1rem .5rem 0 auto;
 width: fit-content;
+display: flex;
+justify-content: space-between;
+}
+
+.messageMeta div{
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.messageMeta p{
 color: #1d1d1d8e;
+margin-left: 1rem;
 }
 
 .loadingState{

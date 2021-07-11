@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {currentDate,  timeAgo} from "../../Utils/date";
 import { useAuthState } from '../../context/auth';
 import { useMessageState } from '../../context/message';
+import  LikeButton from "../../Components/Like/like";
 import "./home.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -34,11 +35,16 @@ let markUp  = messages &&  messages?.map(
                                     <p>{`${message?.sender?.username || message?.sender} fan`}</p>
                            </div>
                            <div className={
-                              (message?.sender?.username || message?.sender ) === user?.username
+                                    (message?.sender?.username || message?.sender ) === user?.username
                                           ? "authmsgbody" : `msgbody`}>
                                     <p>{message?.body}</p>
                                     <div className="messageMeta">
-                                            {currentDate(message?.createdAt)} { timeAgo(message?.createdAt)}
+                                           <div>
+                                               <LikeButton messageId={message.id} likes={message.likes}/>
+                                                {/* <FavoriteBorder style={{color: "#ff0000"}} />
+                                               <b style={{fontSize:"xx-small"}}>1000</b> */}
+                                           </div>
+                                            <p>{currentDate(message?.createdAt)} { timeAgo(message?.createdAt)}</p>
                                      </div>
                                </div>
                      </div>

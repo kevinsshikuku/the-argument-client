@@ -12,6 +12,7 @@ const MessageDispatchContext = createContext();
 
 //Message reducer
 const messageReducer = (state, action) =>{
+   const { messages } = state
    switch(action.type){
 
        case "SET_GROUP_MESSAGES":
@@ -22,8 +23,6 @@ const messageReducer = (state, action) =>{
         }
 
        case "ADD_MESSAGE":
-
-        const  { messages } = state;
         let newMessages = [
           action.payload, ...messages
         ]
@@ -31,6 +30,20 @@ const messageReducer = (state, action) =>{
          ...state,
          messages:  newMessages
         }
+
+
+    case "ADD_LIKE_TO_MSG":
+       let { message:msg} = action.payload;
+
+      let _message =   messages.find( message => message.id === msg )
+
+      let newLikes =[ ..._message.likes,  action.payload]
+
+      _message.likes = newLikes
+      return{
+        ...state
+      }
+
 
       case "SET_GROUPS":
        return{
