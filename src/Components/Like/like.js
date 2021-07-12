@@ -31,6 +31,12 @@ const [createLike] = useMutation(options[operation].mutation,{
       variables: { ...options[operation].variables},
 })
 
+let length;
+if(likes){
+  length  = likes.length
+}else{
+   return ""
+}
 
 
 //..........................button logic ........................................//
@@ -39,7 +45,7 @@ let likeButton;
   likeButton = ( user ?
       <div  onClick={ () => createLike()}> <Favorite  className={classes.fav}/> <b>{likes.length}</b></div> :
 
-      <div><FavoriteBorder /><b>{ likes.length ? likes.length : ""}</b></div>
+      <div><FavoriteBorder /><b>{ length  }</b></div>
   )
 
     return(

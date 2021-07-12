@@ -44,6 +44,7 @@ if(messagesLoading){
    return placeHolder = (
       <div className="loadingState">
            <Avatar src={Teams.EPL} className={classes.large} />
+           .  .  .
       </div>
 
    )

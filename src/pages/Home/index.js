@@ -3,7 +3,7 @@ import  { Avatar} from "@material-ui/core";
 import {Teams} from "../../Assets/logos";
 import { makeStyles } from '@material-ui/core/styles';
 
-import {currentDate,  timeAgo} from "../../Utils/date";
+import { timeAgo} from "../../Utils/date";
 import { useAuthState } from '../../context/auth';
 import { useMessageState } from '../../context/message';
 import  LikeButton from "../../Components/Like/like";
@@ -40,11 +40,9 @@ let markUp  = messages &&  messages?.map(
                                     <p>{message?.body}</p>
                                     <div className="messageMeta">
                                            <div>
-                                               <LikeButton messageId={message.id} likes={message.likes}/>
-                                                {/* <FavoriteBorder style={{color: "#ff0000"}} />
-                                               <b style={{fontSize:"xx-small"}}>1000</b> */}
+                                               <LikeButton messageId={message.id}  likes={message?.likes}/>
                                            </div>
-                                            <p>{currentDate(message?.createdAt)} { timeAgo(message?.createdAt)}</p>
+                                            <p> { timeAgo(message?.createdAt)}</p>
                                      </div>
                                </div>
                      </div>
