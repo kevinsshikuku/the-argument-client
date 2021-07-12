@@ -6,10 +6,13 @@ import  { FavoriteBorder, Favorite} from "@material-ui/icons";
 import { CREATE_LIKE  } from '../../Graphql/like';
 
 const useStyles = makeStyles((theme) => ({
-    fav:{
-      color:"purple",
-      fontSize:"1.7rem"
-    }
+  button: {
+     color: "purple",
+    '&:hover': {
+      color: "blue",
+      fontSize:"2rem"
+    },
+  },
 }))
 
 /** Like buton adds like to message*/
@@ -35,7 +38,7 @@ let length;
 if(likes){
   length  = likes.length
 }else{
-   return ""
+   return 0
 }
 
 
@@ -43,7 +46,7 @@ if(likes){
 let likeButton;
 
   likeButton = ( user ?
-      <div  onClick={ () => createLike()}> <Favorite  className={classes.fav}/> <b>{likes.length}</b></div> :
+      <div  onClick={ () => createLike()}> <Favorite  className={classes.button}/> <b>{likes.length}</b></div> :
 
       <div><FavoriteBorder /><b>{ length  }</b></div>
   )

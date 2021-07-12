@@ -14,6 +14,11 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(6),
     height: theme.spacing(6),
   },
+  larger: {
+    width: theme.spacing(6),
+    height: theme.spacing(6),
+    border: "3px solid blue"
+  },
 }));
 
 
@@ -29,15 +34,20 @@ const  Home = () => {
 let markUp  = messages &&  messages?.map(
           (message) => (
                   <div  key={message.id}>
-                     <div  className={message?.sender?.username === user?.username ? "authmsg" : `msg`}>
-                           <div className="messageSender">
-                                    <Avatar src={message?.sender?.image || Teams.PL}   className={classes.large} />
-                                    <p>{`${message?.sender?.username || message?.sender} fan`}</p>
+                     <hr/>
+                     <div  className="msg">
+                           <div className="avartor">
+                                    <Avatar src={message?.sender?.image || Teams.PL}
+                                                className={
+                                                   (message?.sender?.username || message?.sender ) === user?.username ? classes.larger : classes.large} />
                            </div>
-                           <div className={
-                                    (message?.sender?.username || message?.sender ) === user?.username
-                                          ? "authmsgbody" : `msgbody`}>
-                                    <p>{message?.body}</p>
+                           <div className="messageBody">
+                                    <div  className="messageAction">
+                                          <p>{`${message?.sender?.username || message?.sender} fan`}</p>
+                                    </div>
+                                     <div className="messageText">
+                                           <p> {message?.body}</p>
+                                       </div>
                                     <div className="messageMeta">
                                            <div>
                                                <LikeButton messageId={message.id}  likes={message?.likes}/>
@@ -49,6 +59,11 @@ let markUp  = messages &&  messages?.map(
                   </div>
           )
 )
+
+
+// {
+//                                     (message?.sender?.username || message?.sender ) === user?.username
+//                                           ? "authmsgbody" : `msgbody`}
 
  return (
     <div className="homeWrapper">

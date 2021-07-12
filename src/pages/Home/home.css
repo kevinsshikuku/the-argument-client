@@ -2,38 +2,39 @@
  margin-top: 4rem;
 }
 
-.msg, .authmsg{
+.msg{
  padding: .5rem;
  margin: 0rem 2rem .5rem .5rem;
  border-radius: 1rem;
- clear: both;
+ display: flex;
+ /* clear: both; */
 }
 
-.messageSender{
+.avartor{
   display: flex;
   flex-direction: row;
+  margin-top: 0;
+  margin-bottom: auto;
   align-items: center;
+  flex: content;
 }
 
-.messageSender p{
- font-size: medium;
- font-weight: bolder;
- /* margin-top: auto; */
- margin: 0 0 0 .3rem;
+.messageAction{
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
 }
 
-.msgbody, .authmsgbody{
- margin-left: 3rem;
-  border: .1px solid rgba(90, 90, 90, 0.097);
+.messageBody{
   padding: .5rem 1rem;
-  border-radius: .5rem;
-  background-color: rgba(206, 178, 178, 0.179);
-  word-wrap: break-word;
+  width: 85%;
+  word-break: normal;
+
 }
 
-
-.authmsgbody{
-   background-color: rgba(128, 0, 128, 0.172);
+.messageText{
+   word-wrap: break-word;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .messageMeta{
@@ -41,6 +42,7 @@ margin: 1rem .5rem 0 auto;
 width: fit-content;
 display: flex;
 justify-content: space-between;
+align-items: center;
 }
 
 .messageMeta div{
@@ -54,7 +56,7 @@ align-items: center;
 color: #1d1d1d8e;
 margin-left: 1rem;
 }
-
+/* -------------------------------------------------------------------------- */
 .loadingState{
   height: 100vh;
   display: flex;
