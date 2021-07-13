@@ -3,10 +3,7 @@
  const messagePayload = `
     id
    body
-   sender{
-      id
-      username
-   }
+   sender
    receiver
    createdAt
  `
@@ -58,19 +55,34 @@ export const NEW_MESSAGE = gql`
      message{
         id,
         body,
-        sender
+        sender{
+           id
+           image
+           username
+        },
+        likes{
+           id
+           message
+        }
         createdAt
      }
   }
 `
-
+// const reactions = ['❤️', '😆', '😯', '😢', '😡', '👍', '👎']
 
 export const CREATE_MESSAGE = gql`
   mutation($body: String!, $receiver: String){
      sendMessage(body: $body, receiver:$receiver){
       id
       body
-      sender
+      sender{
+          id
+          username
+      },
+      likes{
+         id
+         message
+      }
       createdAt
   }
 }
