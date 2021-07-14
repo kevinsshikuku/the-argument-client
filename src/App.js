@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useEffect } from 'react';
 import {Route, Switch} from 'react-router-dom';
 import ReactGA from 'react-ga';
 import './App.css';
@@ -13,10 +13,15 @@ import FabComponent from "./Components/Fab";
 import AddMessage  from "./pages/AddMessage/index";
 import About from "./pages/About/About";
 
-ReactGA.initialize('UA-192087437-1');
+ReactGA.initialize('UA-202240616-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
+  
+  useEffect( () => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+},[history] )
+  
   return (
     <div className="App">
           <Header/>
