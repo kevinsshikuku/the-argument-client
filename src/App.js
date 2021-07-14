@@ -1,5 +1,5 @@
 import React,{ useEffect } from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, useHistory} from 'react-router-dom';
 import ReactGA from 'react-ga';
 import './App.css';
 
@@ -17,6 +17,12 @@ ReactGA.initialize('UA-202240616-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
+  
+    const history = useHistory();
+   history.listen((location) => {
+      ReactGA.set({page:location.pathname});
+      ReactGA.pageview(location.pathname)
+   });
   
   useEffect( () => {
     ReactGA.pageview(window.location.pathname + window.location.search);
